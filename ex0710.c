@@ -7,7 +7,7 @@ int main()
 	printf("來養老鼠哦(一雙生3隻，三個月後死掉) \n數量：月份 總共\n"); //題目   
 	for(i=3;i<13;i++){    		//假設3到12隻的不同月份情況 
 	    second=i; mouse[0] = second;   //假設原本數量 
-		for(j=1;j<=10;j++){     //假設1到10月成常情況                   
+		for(j=1;j<11;j++){     //假設1到10月成常情況                   
 		mouse[j] = (second/2)*3; second = second + mouse[j]; //一個月量;結果累加;    
 		j==3? (second = second - mouse[0]):j>3? (second = second - mouse[j-3]) : (0); //判斷是否在死掉 
 		j<3?printf("%2d:%d %2d隻 ",i,j,second):j<6?printf("%2d:%d %3d隻 ",i,j,second): //顯示 
