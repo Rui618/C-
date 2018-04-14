@@ -1,18 +1,18 @@
-/* ex0710 ¾i¦Ñ¹« */
-/* ¸ê¤u¤@¥Ò 40618119  ¬I·ç¨¶ */
+/* ex0710 é¤Šè€é¼  */
+/* è³‡å·¥ä¸€ç”² 40618119 æ–½ç‘é‚‘ */
 #include <stdio.h> 
 int main()
 {
-  	int i,j,second,mouse[10];    // i¦Ñ¹«¼Æ¶q;j¤ë¥÷;secondµ²ªG;mouse¥Íªøªº¼Æ
-	printf("¨Ó¾i¦Ñ¹«®@(¤@Âù¥Í3°¦¡A¤T­Ó¤ë«á¦º±¼) \n¼Æ¶q¡G¤ë¥÷ Á`¦@\n"); //ÃD¥Ø   
-	for(i=3;i<13;i++){    //°²³]3¨ì12°¦ªº¤£¦P¤ë¥÷±¡ªp 
-	    second=i;   mouse[0] = second;   
-		for(j=1;j<=10;j++){     //°²³]1¨ì10¤ë¦¨±`±¡ªp                   
-		mouse[j] = (second/2)*3; second = second + mouse[j]; //¤@­Ó¤ë¶q;µ²ªG²Ö¥[;    
-		j==3? (second = second - mouse[0]):j>3? (second = second - mouse[j-3]) : (0); //§PÂ_¬O§_¦b¦º±¼ 
-		j<6?  printf("%2d:%d %3d°¦ ",i,j,second):printf("%2d:%2d %5d°¦ ",i,j,second);  // Åã¥Ü 
-		if(j==10){printf("\n");} //¨C12­Ó´«¦æ 
-	    }second = 0;  //Âk¹s 
-	}       
-    
+  	long long int i,j,second,mouse[10];    // iè€é¼ æ•¸é‡;jæœˆä»½;secondçµæœ;mouseç”Ÿé•·çš„æ•¸
+	printf("ä¾†é¤Šè€é¼ å“¦(ä¸€é›™ç”Ÿ3éš»ï¼Œä¸‰å€‹æœˆå¾Œæ­»æ‰) \næ•¸é‡ï¼šæœˆä»½ ç¸½å…±\n"); //é¡Œç›®   
+	for(i=3;i<13;i++){    		//å‡è¨­3åˆ°12éš»çš„ä¸åŒæœˆä»½æƒ…æ³ 
+	    second=i; mouse[0] = second;   //å‡è¨­åŸæœ¬æ•¸é‡ 
+		for(j=1;j<=10;j++){     //å‡è¨­1åˆ°10æœˆæˆå¸¸æƒ…æ³                   
+		mouse[j] = (second/2)*3; second = second + mouse[j]; //ä¸€å€‹æœˆé‡;çµæœç´¯åŠ ;    
+		j==3? (second = second - mouse[0]):j>3? (second = second - mouse[j-3]) : (0); //åˆ¤æ–·æ˜¯å¦åœ¨æ­»æ‰ 
+		j<3?printf("%2d:%d %2déš» ",i,j,second):j<6?printf("%2d:%d %3déš» ",i,j,second): //é¡¯ç¤º 
+		j<8?printf("%2d:%d %4déš» ",i,j,second):printf("%2d:%d %5déš» ",i,j,second); //é¡¯ç¤º 
+		if(j==10){printf("\n");} //æ¯12å€‹æ›è¡Œ
+	    }second = 0;  //æ­¸é›¶ 
+	}        
 }                  
