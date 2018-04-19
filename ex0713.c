@@ -13,7 +13,7 @@ int main()
 	    enter[i]=getche();  //輸入 
 		if(enter[i]==27) { break; }  //如果按到ESC就離開 
 		else if(isdigit(enter[i])) //判斷是否數字0~9 
-		{ a++; digit[a] = enter[i];}    
+		{ a++; digit[a]=enter[i];}    
 		else if(isalpha(enter[i])) //判斷是否英文 
 		{   
 			if(isupper(enter[i])) { b++; upper[b]=enter[i];}//判斷大寫字母
@@ -26,13 +26,14 @@ int main()
 		else 
 		{ h++;celse[h]=enter[i];} //其他按鍵
 	}
-	for(j=0;j<=a;j++)
-	{j==0? printf("\n\n輸入0~9數字%2d次\n其中按鍵分別為:",a):printf("%2c",digit[j]);} //顯示數字有幾次
-   	for(j=0;j<=b;j++)
-	{j==0? printf("\n輸入大寫字母%2d次\n其中按鍵分別為:",b):printf("%2c",upper[j]);} //顯示大寫字母有幾次 
-   	for(j=0;j<=c;j++)
-	{j==0? printf("\n輸入小寫字母%2d次\n其中按鍵分別為:",c):printf("%2c",lower[j]);} //顯示小寫字母有幾次 
-	for(j=0;j<=d;j++)
-	{j==0? printf("\n輸入標點字母%2d次\n其中按鍵分別為:",d):printf("%2c",punct[j]);} //顯示標點符號有幾次 
+	printf("\n輸入0~9數字%2d次",a);//顯示數字有幾次
+	if(a!=0){for(j=0;j<=a;j++){j==0?printf("\n其中按鍵分別為:"):printf("%2c",digit[j]);}} 
+	printf("\n輸入大寫字母%2d次",b);//顯示大寫字母有幾次
+   	if(b!=0){for(j=0;j<=b;j++){j==0?printf("\n其中按鍵分別為:"):printf("%2c",upper[j]);}}  
+   	printf("\n輸入小寫字母%2d次",c);//顯示小寫字母有幾次
+	if(c!=0){for(j=0;j<=c;j++){j==0?printf("\n其中按鍵分別為:"):printf("%2c",lower[j]);}}
+   	printf("\n輸入標點字母%2d次",d);//顯示標點符號有幾次
+	if(d!=0){for(j=0;j<=d;j++){j==0?printf("\n其中按鍵分別為:"):printf("%2c",punct[j]);}}  
 	printf("\n輸入控制字元%2d次\n輸入其他按鍵%2d次",e,h);//顯示控制字元有幾次，其他按鍵有幾次 
 }
+	
