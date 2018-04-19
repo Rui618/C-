@@ -1,5 +1,5 @@
-/* ¸ê¤u¤@¥Ò 40618119 ¬I·ç¨¶*/
-/* ex0713 §PÂ_¦r¤¸ºØÃş¤Î¦¸¼Æ */ 
+/* è³‡å·¥ä¸€ç”² 40618119 æ–½ç‘é‚‘*/
+/* ex0713 åˆ¤æ–·å­—å…ƒç¨®é¡åŠæ¬¡æ•¸ */ 
 #include <stdio.h>
 #include <ctype.h>
 #include <conio.h>
@@ -8,34 +8,31 @@ int main()
 	char enter[255];
 	int i=1,j=1,a=0,b=0,c=0,d=0,e=0,h=0;
 	int digit[255], upper[255], lower[255], punct[255], cntrl[255], celse[255];
-	printf("§PÂ_¦r¤¸ºØÃş¡A«öESCÁä¥iÂ÷¶}(­­©w100¦¸)\n\n½Ğ¿é¤J´ú¸Õ¦r¤¸:");
+	printf("åˆ¤æ–·å­—å…ƒç¨®é¡ï¼ŒæŒ‰ESCéµå¯é›¢é–‹(é™å®š100æ¬¡)\n\nè«‹è¼¸å…¥æ¸¬è©¦å­—å…ƒ:\n");
 	for(i=1;i<101;i++){
-	    enter[i]=getche();  //¿é¤J 
-		if(enter[i]==27) { break; }  //¦pªG«ö¨ìESC´NÂ÷¶} 
-		else if(isdigit(enter[i])) //§PÂ_¬O§_¼Æ¦r0~9 
+	    enter[i]=getche();  //è¼¸å…¥ 
+		if(enter[i]==27) { break; }  //å¦‚æœæŒ‰åˆ°ESCå°±é›¢é–‹ 
+		else if(isdigit(enter[i])) //åˆ¤æ–·æ˜¯å¦æ•¸å­—0~9 
 		{ a++; digit[a] = enter[i];}    
-		else if(isalpha(enter[i])) //§PÂ_¬O§_­^¤å 
+		else if(isalpha(enter[i])) //åˆ¤æ–·æ˜¯å¦è‹±æ–‡ 
 		{   
-			if(isupper(enter[i])) { b++; upper[b]=enter[i];}//§PÂ_¤j¼g¦r¥À
-		    else{ c++; lower[c]=enter[i];} //§PÂ_¤p¼g¦r¥À
+			if(isupper(enter[i])) { b++; upper[b]=enter[i];}//åˆ¤æ–·å¤§å¯«å­—æ¯
+		    else{ c++; lower[c]=enter[i];} //åˆ¤æ–·å°å¯«å­—æ¯
 		}
-		else if(ispunct(enter[i])) //§PÂ_¼ĞÂI²Å¸¹
+		else if(ispunct(enter[i])) //åˆ¤æ–·æ¨™é»ç¬¦è™Ÿ
 		{ d++;punct[d]=enter[i];}
-		else if(iscntrl(enter[i])) //§PÂ_±±¨î¦r¤¸
-		{ e++;cntrl[e]=enter[i];}
-		else { h++;celse[h]=enter[i];} //¨ä¥L«öÁä
+		else if(iscntrl(enter[i])) //åˆ¤æ–·æ§åˆ¶å­—å…ƒ
+		{ e++;cntrl[e]=enter[i];printf("\n");}
+		else 
+		{ h++;celse[h]=enter[i];} //å…¶ä»–æŒ‰éµ
 	}
 	for(j=0;j<=a;j++)
-	{j==0? printf("\n\n¿é¤J0~9¼Æ¦r%2d¦¸\n¨ä¤¤«öÁä¤À§O¬°:",a):printf("%2c",digit[j]);} //Åã¥Ü¼Æ¦r¦³´X¦¸
+	{j==0? printf("\n\nè¼¸å…¥0~9æ•¸å­—%2dæ¬¡\nå…¶ä¸­æŒ‰éµåˆ†åˆ¥ç‚º:",a):printf("%2c",digit[j]);} //é¡¯ç¤ºæ•¸å­—æœ‰å¹¾æ¬¡
    	for(j=0;j<=b;j++)
-	{j==0? printf("\n¿é¤J¤j¼g¦r¥À%2d¦¸\n¨ä¤¤«öÁä¤À§O¬°:",b):printf("%2c",upper[j]);} //Åã¥Ü¤j¼g¦r¥À¦³´X¦¸ 
+	{j==0? printf("\nè¼¸å…¥å¤§å¯«å­—æ¯%2dæ¬¡\nå…¶ä¸­æŒ‰éµåˆ†åˆ¥ç‚º:",b):printf("%2c",upper[j]);} //é¡¯ç¤ºå¤§å¯«å­—æ¯æœ‰å¹¾æ¬¡ 
    	for(j=0;j<=c;j++)
-	{j==0? printf("\n¿é¤J¤p¼g¦r¥À%2d¦¸\n¨ä¤¤«öÁä¤À§O¬°:",c):printf("%2c",lower[j]);} //Åã¥Ü¤p¼g¦r¥À¦³´X¦¸ 
+	{j==0? printf("\nè¼¸å…¥å°å¯«å­—æ¯%2dæ¬¡\nå…¶ä¸­æŒ‰éµåˆ†åˆ¥ç‚º:",c):printf("%2c",lower[j]);} //é¡¯ç¤ºå°å¯«å­—æ¯æœ‰å¹¾æ¬¡ 
 	for(j=0;j<=d;j++)
-	{j==0? printf("\n¿é¤J¼ĞÂI¦r¥À%2d¦¸\n¨ä¤¤«öÁä¤À§O¬°:",d):printf("%2c",punct[j]);} //Åã¥Ü¼ĞÂI²Å¸¹¦³´X¦¸ 
-	for(j=0;j<=e;j++)
-	{j==0? printf("\n¿é¤J±±¨î¦r¤¸%2d¦¸",e):printf("%2c",cntrl[j]);}  //Åã¥Ü±±¨î¦r¤¸¦³´X¦¸ 
-	for(j=0;j<=h;j++)
-	{j==0? printf("\n¿é¤J¨ä¥L«öÁä%2d¦¸",h):printf("%2c",celse[j]);} //Åã¥Ü¨ä¥L«öÁä¦³´X¦¸ 
+	{j==0? printf("\nè¼¸å…¥æ¨™é»å­—æ¯%2dæ¬¡\nå…¶ä¸­æŒ‰éµåˆ†åˆ¥ç‚º:",d):printf("%2c",punct[j]);} //é¡¯ç¤ºæ¨™é»ç¬¦è™Ÿæœ‰å¹¾æ¬¡ 
+	printf("\nè¼¸å…¥æ§åˆ¶å­—å…ƒ%2dæ¬¡\nè¼¸å…¥å…¶ä»–æŒ‰éµ%2dæ¬¡",e,h);//é¡¯ç¤ºæ§åˆ¶å­—å…ƒæœ‰å¹¾æ¬¡ï¼Œå…¶ä»–æŒ‰éµæœ‰å¹¾æ¬¡ 
 }
-	
